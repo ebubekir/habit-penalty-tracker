@@ -7,7 +7,7 @@ import { PlanList } from '@/app/plan/list/components/plan-list'
 import { Text } from 'rizzui/typography'
 export default function Plans() {
   const { user } = useAuth()
-  const { data: habitPlans, isLoading } = useQuery({
+  const { data: habitPlans } = useQuery({
     queryKey: ['habitPlans', user?.uid],
     queryFn: () => (user?.uid ? getHabitPlans(user.uid) : Promise.resolve([])),
     enabled: !!user?.uid,

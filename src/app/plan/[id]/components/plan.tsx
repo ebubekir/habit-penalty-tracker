@@ -1,6 +1,5 @@
 'use client'
 
-import { HabitPlan } from '@/db/models'
 import { getHabitPlan, getHabitPlanPointsForToday } from '@/db/habits'
 import { useAuth } from '@/core/context/auth-context'
 import { TodayPenalties } from './today-penalties'
@@ -8,7 +7,6 @@ import { DailyScore } from './daily-score'
 import { Penalty } from './penalty'
 import { useQuery } from '@tanstack/react-query'
 import { HabitHistory } from './habit-history'
-import { BiEdit } from 'react-icons/bi'
 import { EditPlanButton } from './edit-plan-button'
 
 export default function Plan({ planId }: { planId: string }) {

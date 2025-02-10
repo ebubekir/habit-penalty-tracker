@@ -35,7 +35,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     })
 
-    // Cleanup subscription
     return () => unsubscribe()
   }, [])
 

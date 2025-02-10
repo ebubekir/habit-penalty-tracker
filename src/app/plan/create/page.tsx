@@ -6,10 +6,7 @@ import { addHabitPlan } from '@/db/habits'
 import { HabitPenalty } from '@/db/models'
 import { useAuth } from '@/core/context/auth-context'
 import { FaPlus } from 'react-icons/fa'
-
-// Add default emojis
-const DEFAULT_EMOJI = '💪'
-export const EMOJI_OPTIONS = ['💪', '🏃', '📚', '🧘', '💤', '🥗', '💧', '🚭', '✍️', '🎯']
+import { DEFAULT_EMOJI, EMOJI_OPTIONS } from '@/core/emoji-options'
 
 export default function CreateHabitPlan() {
   const router = useRouter()

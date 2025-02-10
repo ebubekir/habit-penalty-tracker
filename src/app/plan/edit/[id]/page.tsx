@@ -4,17 +4,11 @@ import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { useQuery } from '@tanstack/react-query'
 import { getHabitPlan, updateHabitPlan } from '@/db/habits'
-import { useAuth } from '@/core/context/auth-context'
-import { EMOJI_OPTIONS } from '@/app/plan/create/page'
+import { EMOJI_OPTIONS } from '@/core/emoji-options'
 import { FaPlus } from 'react-icons/fa'
 import { toast } from 'react-hot-toast'
 import { HabitPenalty } from '@/db/models'
 import { CgClose } from 'react-icons/cg'
-interface PageProps {
-  params: {
-    id: string
-  }
-}
 
 export default function EditPlan() {
   const params = useParams()
@@ -27,8 +21,6 @@ export default function EditPlan() {
   const [isDefault, setIsDefault] = useState(true)
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
-
-  const { user } = useAuth()
 
   const { data: habitPlan, isLoading: isLoadingPlan } = useQuery({
     queryKey: ['getHabitPlanDetail', habitPlanId],

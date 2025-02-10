@@ -1,6 +1,6 @@
 import { CgClose } from 'react-icons/cg'
 
-export function DeletePlanButton({ planId }: { planId: string }) {
+export function DeletePlanButton() {
   return (
     <button
       type="button"

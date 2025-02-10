@@ -4,6 +4,7 @@ import { DeletePlanButton } from './delete-plan-button'
 import { PlanTitle } from './title'
 import { PlanDateInfo } from './plan-date-info'
 import { PlanPenalties } from './plan-penalties'
+import Link from 'next/link'
 
 export function PlanList({ habitPlans }: { habitPlans?: HabitPlan[] }) {
   const router = useRouter()
@@ -15,7 +16,7 @@ export function PlanList({ habitPlans }: { habitPlans?: HabitPlan[] }) {
           onClick={() => router.push(`/plan/${plan.id}`)}
           className="relative p-4 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-pointer"
         >
-          <DeletePlanButton planId={plan.id} />
+          <DeletePlanButton />
           <div className="flex items-start justify-between">
             <div className="space-y-2">
               <PlanTitle plan={plan} />
@@ -28,12 +29,12 @@ export function PlanList({ habitPlans }: { habitPlans?: HabitPlan[] }) {
           </div>
         </div>
       ))}
-      <a
+      <Link
         href="/plan/create"
         className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
       >
         Create Habit Plan
-      </a>
+      </Link>
     </div>
   )
 }
